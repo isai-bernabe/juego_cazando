@@ -23,16 +23,14 @@ const ALTO_COMIDA = 30;
 
 
 
-// Función graficarGato utilizando variables y constantes
+// Función graficarGato refactorizada
 function graficarGato() {
-    ctx.fillStyle = "black";
-    ctx.fillRect(gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
+    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "black");
 }
 
-// Función graficarComida utilizando variables y constantes
+// Función graficarComida refactorizada
 function graficarComida() {
-    ctx.fillStyle = "red"; // Un color contrastante para la comida
-    ctx.fillRect(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA);
+    graficarRectangulo(comidaX, comidaY, ANCHO_COMIDA, ALTO_COMIDA, "red");
 }
 
 // Función iniciarJuego para asignar posiciones y dibujar
@@ -48,4 +46,9 @@ function iniciarJuego() {
     // Dibujar los elementos en pantalla
     graficarGato();
     graficarComida();
+}
+
+function graficarRectangulo(x, y, ancho, alto, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, ancho, alto);
 }
