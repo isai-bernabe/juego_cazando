@@ -14,7 +14,7 @@ let gatoX = 0;
 let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
-
+let puntaje = 0;
 
 // Constantes de dimensiones
 const ANCHO_GATO = 50;
@@ -90,3 +90,30 @@ function moverAbajo() {
     detectarColision();
 }
 
+function detectarColision() {
+    // Lógica de colisión básica evaluando X, Y, Ancho y Alto
+    if (gatoX < comidaX + ANCHO_COMIDA &&
+        gatoX + ANCHO_GATO > comidaX &&
+        gatoY < comidaY + ALTO_COMIDA &&
+        gatoY + ALTO_GATO > comidaY) {
+
+        // 1. Incrementar puntaje y mostrarlo
+        puntaje++;
+        document.getElementById("puntos").innerText = puntaje;
+
+        // 2. Reubicar comida aleatoriamente (evitando que se salga del canvas)
+        comidaX = Math.floor(Math.random() * (canvas.width - ANCHO_COMIDA));
+        comidaY = Math.floor(Math.random() * (canvas.height - ALTO_COMIDA));
+
+        // 3. Volver a dibujar con la nueva posición
+        limpiarCanva();
+        graficarGato();
+        graficarComida();
+
+        // 4. Validar si ganó el juego
+        if (puntaje === 6) {
+            alert("¡Ganaste!");
+            clearInterval(idIntervalo); // Detener el tiempo
+        }
+    }
+}
