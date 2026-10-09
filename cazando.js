@@ -15,6 +15,8 @@ let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
 let puntaje = 0;
+let tiempo = 10;
+let idIntervalo;
 
 // Constantes de dimensiones
 const ANCHO_GATO = 50;
@@ -47,6 +49,8 @@ function iniciarJuego() {
     // Dibujar los elementos en pantalla
     graficarGato();
     graficarComida();
+
+    idIntervalo = setInterval(restarTiempo, 1000);
 }
 
 function graficarRectangulo(x, y, ancho, alto, color) {
@@ -117,3 +121,31 @@ function detectarColision() {
         }
     }
 }
+
+function restarTiempo() {
+    tiempo = tiempo - 1;
+    document.getElementById("tiempo").innerText = tiempo;
+
+    if (tiempo === 0) {
+        alert("Game Over");
+        clearInterval(idIntervalo); // Detener el intervalo
+    }
+}
+
+function reiniciarJuego() {
+    // Limpiar intervalo anterior por seguridad
+    clearInterval(idIntervalo);
+
+    // Restablecer variables
+    tiempo = 10;
+    puntaje = 0;
+
+    // Restablecer vista en pantalla
+    document.getElementById("tiempo").innerText = tiempo;
+    document.getElementById("puntos").innerText = puntaje;
+
+    // Limpiar lienzo e iniciar juego otra vez
+    limpiarCanva();
+    iniciarJuego(); // Esto centrará al gato, pondrá la comida y reiniciará el timer
+}
+
