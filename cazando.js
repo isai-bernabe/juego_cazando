@@ -15,6 +15,7 @@ let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
 
+
 // Constantes de dimensiones
 const ANCHO_GATO = 50;
 const ALTO_GATO = 50;
@@ -52,3 +53,40 @@ function graficarRectangulo(x, y, ancho, alto, color) {
     ctx.fillStyle = color;
     ctx.fillRect(x, y, ancho, alto);
 }
+
+function limpiarCanva() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+}
+
+function moverIzquierda() {
+    gatoX = gatoX - 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision(); 
+}
+
+function moverDerecha() {
+    gatoX = gatoX + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
+function moverArriba() {
+    gatoY = gatoY - 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
+function moverAbajo() {
+    gatoY = gatoY + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+    detectarColision();
+}
+
