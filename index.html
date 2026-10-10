@@ -1,35 +1,50 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Juego Cazando</title>
-  <link rel="stylesheet" href="cazando.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Cazando</title>
+    <!-- Conexión al archivo de estilos -->
+    <link rel="stylesheet" href="cazando.css"/>
 </head>
 <body onload="iniciarJuego()">
+    
+    <!-- Contenedor principal estilo consola Arcade -->
+    <div class="arcade-container">
+        
+        <h1 class="neon-title">Juego Cazando</h1>
+        <p class="autor-text">Autor: Isaí Barrera</p>
+        
+        <!-- Panel de Puntos y Tiempo -->
+        <div class="panel">
+            <span class="marcador">PUNTOS: <span id="puntos">0</span></span>
+            <span class="marcador">TIEMPO: <span id="tiempo">45</span></span>
+        </div>
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Isaí Barrera</p>
+        <!-- El lienzo del juego (¡El ID areaJuego no se toca!) -->
+        <canvas id="areaJuego" width="500" height="500"></canvas>
+        
+        <!-- Espacio para mensajes (Game Over / Ganaste) -->
+        <p id="mensaje"></p>
+        
+        <!-- Controles organizados -->
+        <div class="controles-wrapper">
+            
+            <!-- Cruceta de movimiento en cuadrícula -->
+            <div class="cruceta">
+                <button onclick="moverArriba()" style="grid-column: 2; grid-row: 1;">⬆️</button>
+                <button onclick="moverIzquierda()" style="grid-column: 1; grid-row: 2;">⬅️</button>
+                <button onclick="moverAbajo()" style="grid-column: 2; grid-row: 2;">⬇️</button>
+                <button onclick="moverDerecha()" style="grid-column: 3; grid-row: 2;">➡️</button>
+            </div>
 
-  <canvas id="areaJuego" width="500" height="500"></canvas>
+            <!-- Botón de Reinicio separado -->
+            <button class="btn-reiniciar" onclick="reiniciarJuego()">REINICIAR</button>
+            
+        </div>
+    </div>
 
-  <div class="controles">
-    <button onclick="moverArriba()">⬆️</button>
-    <br>
-    <button onclick="moverIzquierda()">⬅️</button>
-    <button onclick="moverAbajo()">⬇️</button>
-    <button onclick="moverDerecha()">➡️</button>
-  
-  </div>
-    <button onclick="reiniciarJuego()" style="margin-top: 15px;">REINICIAR</button>
-
-
-  <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span>Tiempo: <span id="tiempo">10</span></span>
-  </div>
-
-  <p id="mensaje"></p>
-
-  <script src="cazando.js"></script>
-
+    <!-- Si en tu proyecto usas utils.js o utilitarios.js, colócalo aquí arriba -->
+    <script src="cazando.js"></script>
 </body>
 </html>

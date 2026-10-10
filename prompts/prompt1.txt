@@ -1,0 +1,1 @@
+Actúa como un experto en diseño UI/UX. Mejora la interfaz gráfica de mi juego Cazando utilizando una estética arcade retro con bordes de neón. Genera solo código CSS, ya que no tengo permitido modificar el archivo JavaScript.

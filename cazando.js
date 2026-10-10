@@ -4,7 +4,7 @@ let ctx = canvas.getContext("2d");
 
 // Función graficarGato (sin parámetros) que dibuja un rectángulo centrado
 function graficarGato() {
-    ctx.fillStyle = "black"; 
+    ctx.fillStyle = "yellow"; 
     // Coordenadas (225, 225) con tamaño de 50x50 px
     ctx.fillRect(((500-50)/2), ((500-50)/2), 50, 50);
 }
@@ -15,7 +15,7 @@ let gatoY = 0;
 let comidaX = 0;
 let comidaY = 0;
 let puntaje = 0;
-let tiempo = 10;
+let tiempo = 45;
 let idIntervalo;
 
 // Constantes de dimensiones
@@ -28,7 +28,7 @@ const ALTO_COMIDA = 30;
 
 // Función graficarGato refactorizada
 function graficarGato() {
-    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "black");
+    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "yellow");
 }
 
 // Función graficarComida refactorizada
@@ -137,7 +137,7 @@ function reiniciarJuego() {
     clearInterval(idIntervalo);
 
     // Restablecer variables
-    tiempo = 10;
+    tiempo = 45;
     puntaje = 0;
 
     // Restablecer vista en pantalla

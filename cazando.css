@@ -1,42 +1,127 @@
+/* Tipografía Arcade Retro de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&display=swap');
+
+/* Fondo general de la página con imagen de internet (Estilo Synthwave) */
 body {
-  text-align: center;
-  font-family: Arial, sans-serif;
-  background: #f0f0f0;
-  margin: 0;
-  padding: 20px;
+    margin: 0;
+    padding: 20px;
+    background-color: #0d0e15;
+    background-image: url('https://img.magnific.com/vector-gratis/fondo-dia-internacional-gato-dibujado-mano-gatos_23-2149454620.jpg?semt=ais_hybrid&w=740&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    font-family: 'Orbitron', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
-h1 {
-  margin-bottom: 5px;
+/* Caja de la consola central */
+.arcade-container {
+    background: rgba(13, 14, 21, 0.85); /* Fondo oscuro semitransparente */
+    border: 2px solid #ff00ff; /* Borde rosa neón */
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 0 20px #ff00ff, inset 0 0 15px rgba(255, 0, 255, 0.3);
+    text-align: center;
+    backdrop-filter: blur(8px);
 }
 
+/* Títulos y textos */
+.neon-title {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    font-size: 2.2rem;
+}
+
+.autor-text {
+    color: #ff00ff;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Marcador (Puntos y Tiempo) */
 .panel {
-  margin: 15px 0;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 20px;
+    font-size: 1.2rem;
+    color: #ffff00;
+    text-shadow: 0 0 8px #ffff00;
 }
 
+/* Lienzo del juego (El recuadro donde se mueve el gato) */
 canvas {
-  background: white;
-  border: 2px solid black;
+    background: #000000;
+    border: 3px solid #00ffff; /* Borde cyan neón */
+    box-shadow: 0 0 15px #00ffff;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;
 }
 
-.controles {
-  margin-top: 20px;
+/* Organización de los controles */
+.controles-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 40px;
+    margin-top: 25px;
 }
 
+.cruceta {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 8px;
+}
+
+/* Estilo general de los botones */
 button {
-  margin: 5px;
-  padding: 10px 16px;
-  font-size: 18px;
-  cursor: pointer;
+    background: #1a1a2e;
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    padding: 12px 18px;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Orbitron', sans-serif;
 }
 
+button:hover {
+    background: #00ffff;
+    color: #000000;
+    box-shadow: 0 0 15px #00ffff;
+    transform: scale(1.1);
+}
+
+/* Estilo específico para el botón REINICIAR */
+.btn-reiniciar {
+    border-color: #ff00ff;
+    color: #ff00ff;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 15px 25px;
+}
+
+.btn-reiniciar:hover {
+    background: #ff00ff;
+    color: #ffffff;
+    box-shadow: 0 0 20px #ff00ff;
+}
+
+/* Mensajes de Game Over o Ganaste */
 #mensaje {
-  font-size: 20px;
-  font-weight: bold;
-  color: darkred;
-  margin-top: 15px;
+    font-size: 1.5rem;
+    color: #ff0055;
+    font-weight: bold;
+    text-shadow: 0 0 10px #ff0055;
+    min-height: 25px;
+    margin-top: 15px;
 }
