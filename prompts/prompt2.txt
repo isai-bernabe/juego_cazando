@@ -1,0 +1,1 @@
+Proporciona el código CSS exacto para integrar una imagen de fondo obtenida de internet en el body de mi documento. Asegúrate de que la imagen cubra toda la pantalla, esté centrada y no se distorsione.
